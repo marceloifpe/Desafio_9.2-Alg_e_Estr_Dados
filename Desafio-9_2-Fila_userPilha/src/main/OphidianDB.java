@@ -11,16 +11,16 @@ public class OphidianDB {
         recebeLista.insereFim(cliente);
     }
 
-    public void processarfila(){
+    public void processarfila() {
         System.out.println("Inicio do processamento da fila \n");
         while (!recebeLista.isEmpty()) {
             ClienteOphidian cliente = recebeLista.removeInicio();
-            if (!cliente.getPapelFeito()){
+            if (!cliente.getPapelFeito()) {
                 recebeLista.insereFim(cliente);
             }
         }
         System.out.println("\n \nA fila foi Finalizada");
-        
+
     }
-    
+
 }
