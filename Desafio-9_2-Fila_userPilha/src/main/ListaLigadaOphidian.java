@@ -2,37 +2,37 @@ package main;
 
 public class ListaLigadaOphidian {
 
-    private NoOphidian _cabeca;
-    private NoOphidian _cauda;
+    private NoOphidian head;
+    private NoOphidian tail;
 
     public ListaLigadaOphidian() {
-        _cabeca = null;
-        _cauda = null;
+        head = null;
+        tail = null;
     }
 
     public void insereFim(ClienteOphidian cliente) {
-        NoOphidian novo = new NoOphidian(cliente);
-        if (_cabeca == null) {
-            _cabeca = novo;
-            _cauda = novo;
+        NoOphidian temp_No = new NoOphidian(cliente);
+        if (head == null) {
+            head = temp_No;
+            tail = temp_No;
         } else {
-            _cauda.set_proximo(novo);
-            _cauda = novo;
+            tail.set_proximo(temp_No);
+            tail = temp_No;
         }
     }   
 
     public ClienteOphidian removeInicio() {
-        if (_cabeca == null) {
+        if (head == null) {
             return null;
         } else {
-            ClienteOphidian cliente = _cabeca.get_cliente();
-            _cabeca = _cabeca.get_proximo();
-            return cliente;
+            ClienteOphidian cliente_recebe = head.get_cliente();
+            head = head.get_proximo();
+            return cliente_recebe;
         }
     }
 
     public Boolean isEmpty() {
-        return _cabeca == null;
+        return head == null;
     }
     
 }

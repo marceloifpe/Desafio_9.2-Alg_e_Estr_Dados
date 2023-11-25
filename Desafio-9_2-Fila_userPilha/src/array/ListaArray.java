@@ -1,4 +1,5 @@
 package array;
+
 import list.EstruturaElementar;
 
 /* Marcelo Augusto de Barros Araújo */

@@ -1,30 +1,31 @@
 package main;
 
 public class ClienteOphidian {
-    private String _nome;
-    private Boolean _papeladaPronta;
+    private String nome_Cliente;
+    private Boolean gera_Papel;
 
     public ClienteOphidian(String nome) {
-        _nome = nome;
-        _papeladaPronta = papeladaRandom();
+        nome_Cliente = nome;
+        gera_Papel = papelAlea();
     }
 
-    private Boolean papeladaRandom(){
+    private Boolean papelAlea(){
         int random = (int) (Math.random() * 100);
         return random >= 25;
     }
 
     public String getNome() {
-        return _nome;
+        return nome_Cliente;
     }
 
-    public Boolean getPapeladaPronta() {
-        if (_papeladaPronta) {
-            System.out.println("Cliente " + _nome + " tem a papelada pronta");
-            return _papeladaPronta;
+    public Boolean getPapelFeito() {
+        if (gera_Papel) {
+            System.out.println("Cliente " + nome_Cliente + " tem a papelada pronta");
+            return gera_Papel;
         } else {
-            System.out.println("Cliente " + _nome + " não tem a papelada pronta e volto ao final da fila");
-            _papeladaPronta = papeladaRandom();
+            System.out.println("Cliente " + nome_Cliente + 
+            " não tem a papelada pronta e retorna ao final da fila");
+            gera_Papel = papelAlea();
             return false;
         }
     }

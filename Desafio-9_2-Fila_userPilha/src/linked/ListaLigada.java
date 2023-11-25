@@ -2,7 +2,7 @@ package linked;
 
 import list.EstruturaElementar;
 
-public class ListaLigada implements EstruturaElementar{
+public class ListaLigada implements EstruturaElementar {
 
     private No _cabeca;
 
@@ -62,7 +62,7 @@ public class ListaLigada implements EstruturaElementar{
 
     @Override
     public int predecessor(int valor) {
-        if (valor > 1){
+        if (valor > 1) {
             int posicao = 1;
             for (No atual = _cabeca; atual != null; atual = atual.getProximo()) {
                 if (posicao == valor) {
@@ -112,14 +112,14 @@ public class ListaLigada implements EstruturaElementar{
         } else {
             No atual = _cabeca;
             int id_atual = 0;
-            if (buscaIndice == 0){
+            if (buscaIndice == 0) {
                 novo.setProximo(_cabeca);
                 _cabeca = novo;
             } else {
-                while (atual.getProximo() != null){
+                while (atual.getProximo() != null) {
                     atual = atual.getProximo();
                     id_atual += 1;
-                    if (id_atual == buscaIndice){
+                    if (id_atual == buscaIndice) {
                         novo.setProximo(atual);
                         atual.setProximo(novo);
                     }
@@ -139,8 +139,8 @@ public class ListaLigada implements EstruturaElementar{
         if (_cabeca == null) {
             _cabeca = novo;
         } else {
-            for (No atual = _cabeca; atual != null; atual = atual.getProximo()){
-                if (atual.getProximo() == null){
+            for (No atual = _cabeca; atual != null; atual = atual.getProximo()) {
+                if (atual.getProximo() == null) {
                     atual.setProximo(novo);
                     break;
                 }
@@ -163,7 +163,7 @@ public class ListaLigada implements EstruturaElementar{
                     return;
                 }
                 atual = atual.getProximo();
-            }   
+            }
         }
     }
 
@@ -200,7 +200,7 @@ public class ListaLigada implements EstruturaElementar{
     public void removeFim() {
         if (_cabeca == null) {
             return;
-        } 
+        }
         No atual = _cabeca;
         while (atual.getProximo() != null) {
             if (atual.getProximo().getProximo() == null) {
@@ -210,5 +210,5 @@ public class ListaLigada implements EstruturaElementar{
             atual = atual.getProximo();
         }
     }
-    
+
 }
